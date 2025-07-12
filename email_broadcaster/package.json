@@ -1,0 +1,26 @@
+{
+  "name": "email_broadcaster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "file-saver": "^2.0.5",
+    "json2csv": "^6.0.0-alpha.2",
+    "mysql2": "^3.14.1",
+    "ngx-quill": "^28.0.1",
+    "nodemailer": "^7.0.5",
+    "quill": "^2.0.3",
+    "xlsx": "^0.18.5"
+  }
+}

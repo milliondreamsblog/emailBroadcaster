@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Send Email</h2>
+
+    <label>Subject:</label>
+    <input [(ngModel)]="subject" type="text" placeholder="Enter subject" />
+
+    <label>Recipients (comma-separated):</label>
+    <textarea [(ngModel)]="recipientsInput" rows="2" placeholder="email1@example.com, email2@example.com"></textarea>
+
+    <label>Body:</label>
+    <quill-editor [(ngModel)]="body" [style]="{ height: '200px' }"></quill-editor>
+
+    <button (click)="sendEmail()" [disabled]="sending">Send Email</button>
+
+    <p>{{ statusMessage }}</p>
+</div>
+  
