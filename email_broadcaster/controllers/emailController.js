@@ -8,7 +8,8 @@ exports.sendEmails = async (req, res) => {
   const results = [];
   for (let email of recipients) {
     try {
-      await sendEmail(email, subject, body);
+      const response = await sendEmail(email, subject, body);
+      console.log(response);
       await db.query(
         'INSERT INTO email_logs (subject, body, recipient_email, status) VALUES (?, ?, ?, ?)',
         [subject, body, email, 'Sent']

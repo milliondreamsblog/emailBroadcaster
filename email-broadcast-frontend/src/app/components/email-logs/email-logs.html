@@ -1,1 +1,38 @@
-<p>email-logs works!</p>
+<div class="logs-container">
+    <h2>Email Delivery Logs</h2>
+
+    <button (click)="exportLogs()">Export as Excel</button>
+
+    <table *ngIf="logs.length > 0; else noLogs">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Recipient</th>
+                <th>Status</th>
+                <th>Message Snippet</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let log of logs">
+                <td>{{ log.subject }}</td>
+                <td>{{ log.recipient }}</td>
+                <td>{{ log.status }}</td>
+                <td>{{ log.body | slice:0:50 }}...</td>
+                <td>{{ log.timestamp | date:'short' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #noLogs>
+        <p>No logs available.</p>
+    </ng-template>
+
+    <div class="pagination">
+        <button (click)="prevPage()" [disabled]="page === 1">Prev</button>
+        <span>Page {{ page }} of {{ totalPages }}</span>
+        <button (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+    </div>
+
+    <div *ngIf="loading" class="loading">Loading...</div>
+</div>

@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'http://localhost:3000/api/email'; // Change if backend path differs
+  private apiUrl = 'http://localhost:3000/api'; 
 
   constructor(private http: HttpClient) {}
 
   sendEmail(data: { subject: string; body: string; recipients: string[] }) {
-    return this.http.post(`${this.apiUrl}/send`, data);
+    return this.http.post(`${this.apiUrl}/send-email`, data);
   }
 
   getLogs(page: number = 1, limit: number = 10) {
@@ -19,7 +19,7 @@ export class EmailService {
 
   exportLogs() {
     return this.http.get(`${this.apiUrl}/logs/export`, {
-      responseType: 'blob' // Important for file download
+      responseType: 'blob' 
     });
   }
 }

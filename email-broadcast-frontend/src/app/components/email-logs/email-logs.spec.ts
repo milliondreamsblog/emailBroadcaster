@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmailLogs } from './email-logs';
+import { EmailLogsComponent } from './email-logs';
 
 describe('EmailLogs', () => {
   let component: EmailLogs;

@@ -2,12 +2,12 @@
   "name": "email-broadcast-frontend",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "start": "ng serve --proxy-config proxy.conf.json",
+  "build": "ng build",
+  "test": "ng test",
+  "lint": "ng lint",
+  "e2e": "ng e2e"
+},
   "prettier": {
     "overrides": [
       {
